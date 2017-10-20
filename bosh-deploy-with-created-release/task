@@ -18,6 +18,7 @@ optional_submodule_bump() {
 
   if ! [ -z "${BUMP_SUBMODULE}" ]; then
     pushd "release/${BUMP_SUBMODULE}"
+      git fetch
       git checkout "${SUBMODULE_BRANCH}"
       git pull
     popd
